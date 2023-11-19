@@ -1,0 +1,213 @@
+﻿@page "/"
+
+<div class="container-center">
+      <div class="container">
+        <header class="header">
+          <div class="author-label"><p>PAMW Lab06 - Mateusz Czarnecki</p></div>
+        </header>
+        <div class="history-bar"><p class="history-bar-text">@historyValue</p></div>
+        <div class="output">@output</div>
+        <button class="btn btn--percent" @onclick="ChangeToPercent" >%</button>
+        <button class="btn btn--clear" id="ce" @onclick="ClearOutput">CE</button>
+        <button class="btn btn--clear" id="c"@onclick="ClearOutput">C</button>
+        <button class="btn btn--backspace" id="backspace" @onclick="RemoveDigit"><i class="fa-solid fa-delete-left"></i></button>
+        <button class="btn btn--action" id="1/x" @onclick="MakeOneDivideByX">1/x</button>
+        <button class="btn btn--action" id="power" @onclick="MakePower">x^2</button>
+        <button class="btn btn--action" id="sqrt" @onclick="MakeSqrt"><i class="fa-solid fa-square-root-variable"></i></button>
+        <button class="btn btn--action" id="divide" @onclick="MakeDivide" ><i class="fa-solid fa-divide"></i></button>
+        @foreach (var digit in new[] { "7", "8", "9" })
+        {
+            <button class="btn btn--darker btn--digit" @onclick="() => AddDigit(digit)">@digit</button>
+        }
+        <button class="btn btn--action" id="multiply" @onclick="MakeMultiply"><i class="fa-solid fa-xmark"></i></button>
+       @foreach (var digit in new[] { "4", "5", "6" })
+        {
+            <button class="btn btn--darker btn--digit" @onclick="() => AddDigit(digit)">@digit</button>
+        }
+        <button class="btn btn--action" id="minus" @onclick="MakeMinus"><i class="fa-solid fa-minus"></i></button>
+        @foreach (var digit in new[] { "1", "2", "3" })
+        {
+            <button class="btn btn--darker btn--digit" @onclick="() => AddDigit(digit)">@digit</button>
+        }
+        <button class="btn btn--action" id="plus" @onclick="MakePlus"><i class="fa-solid fa-plus"></i></button>
+        <button class="btn btn--darker" id="change-sign" @onclick="ChangeSign">+/-</button>
+        @foreach (var digit in new[] { "0" })
+        {
+            <button class="btn btn--darker btn--digit" @onclick="() => AddDigit(digit)">@digit</button>
+        }
+        <button class="btn btn--darker" id="comma" @onclick="AddComma">,</button>
+        <button class="btn btn--action" id="equals" @onclick="MakeEquals"><i class="fa-solid fa-equals"></i>
+        </button>
+      </div>
+</div>
+@code {
+    private string output = "0";
+    private string historyValue = "";
+    private string lastOperation = "";
+    private bool clearOutputBeforeAddDigit = false;
+
+    private void AddDigit(string digit)
+    {
+        if (clearOutputBeforeAddDigit || output == "0")
+        {
+            output = "";
+            clearOutputBeforeAddDigit = false;
+        }
+
+        if (output.Length < 12)
+        {
+            output += digit;
+        }
+    }
+
+    private void ClearOutput()
+    {
+        output = "0";
+        historyValue = "";
+        lastOperation = "";
+    }
+
+    private void RemoveDigit()
+    {
+        if (output.Length > 1)
+        {
+            output = output[..^1];
+        }
+        else
+        {
+            output = "0";
+        }
+    }
+
+    private void ChangeSign()
+    {
+        if (output.StartsWith("-"))
+        {
+            output = output[1..];
+        }
+        else if (output != "0")
+        {
+            output = "-" + output;
+        }
+    }
+
+    private void ChangeToPercent()
+    {
+        if (double.TryParse(output, out double result))
+        {
+            output = (result / 100).ToString();
+        }
+    }
+
+    private void AddComma()
+    {
+        if (!output.Contains("."))
+        {
+            output += ".";
+        }
+    }
+
+    
+    private void MakeOperation(string operation)
+    {
+        if (double.TryParse(output, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out double currentValue))
+        {
+            double result = currentValue;
+
+            if (!string.IsNullOrEmpty(historyValue) && double.TryParse(historyValue, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out double historyNum))
+            {
+                switch (lastOperation)
+                {
+                    case "divide":
+                        result = historyNum / currentValue;
+                        break;
+                    case "multiply":
+                        result = historyNum * currentValue;
+                        break;
+                    case "minus":
+                        result = historyNum - currentValue;
+                        break;
+                    case "plus":
+                        result = historyNum + currentValue;
+                        break;
+                }
+            }
+
+            if (operation != "equals")
+            {
+                historyValue = result.ToString(System.Globalization.CultureInfo.InvariantCulture);
+                clearOutputBeforeAddDigit = true;
+                lastOperation = operation;
+            }
+            else
+            {
+                historyValue = "";
+                clearOutputBeforeAddDigit = false;
+                lastOperation = "";
+                output = result.ToString(System.Globalization.CultureInfo.InvariantCulture);
+            }
+
+            if (output.Length > 12)
+            {
+                output = result.ToString("G12", System.Globalization.CultureInfo.InvariantCulture);
+            }
+        }
+    }
+
+    private double ParseNumber(string numberString)
+    {
+        if (double.TryParse(numberString, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out double result))
+        {
+            return result;
+        }
+        return 0;
+    }
+
+    private void MakeDivide() => MakeOperation("divide");
+    private void MakeMultiply() => MakeOperation("multiply");
+    private void MakeMinus() => MakeOperation("minus");
+    private void MakePlus() => MakeOperation("plus");
+    private void MakeEquals() => MakeOperation("equals");
+
+    private void MakePower()
+    {
+        if (double.TryParse(output, out double currentValue))
+        {
+            output = Math.Pow(currentValue, 2).ToString("G11");
+            historyValue = "";
+            clearOutputBeforeAddDigit = true;
+        }
+    }
+
+    private void MakeSqrt()
+    {
+        if (double.TryParse(output, out double currentValue))
+        {
+            output = Math.Sqrt(currentValue).ToString("G11");
+            historyValue = "";
+            clearOutputBeforeAddDigit = true;
+        }
+    }
+
+    private void MakeOneDivideByX()
+    {
+        if (double.TryParse(output, out double currentValue) && currentValue != 0)
+        {
+            output = (1 / currentValue).ToString("G11");
+            historyValue = "";
+            clearOutputBeforeAddDigit = true;
+        }
+    }
+
+    private string GetOperationSymbol(string operation)
+    {
+        return operation switch
+        {
+            "divide" => "/",
+            "multiply" => "*",
+            "minus" => "-",
+            "plus" => "+",
+            _ => ""
+        };
+    }
+}

@@ -1,0 +1,85 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/bin/Debug/net8.0/wwwroot/_framework/blazor.webassembly.js",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js"
+    },
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/obj/Debug/net8.0/compressed/epcliqj2df.gz",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/obj/Debug/net8.0/scopedcss/bundle/MyBlazorPwa.styles.css",
+      "PackagePath": "staticwebassets/MyBlazorPwa.styles.css"
+    },
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/obj/Debug/net8.0/service-worker-assets.js",
+      "PackagePath": "staticwebassets/service-worker-assets.js"
+    },
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/obj/Debug/net8.0/service-worker/service-worker.published.js",
+      "PackagePath": "staticwebassets/service-worker.js"
+    },
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/wwwroot/css/app.css",
+      "PackagePath": "staticwebassets/css/app.css"
+    },
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/wwwroot/css/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/wwwroot/css/style.css",
+      "PackagePath": "staticwebassets/css/style.css"
+    },
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/wwwroot/icon-192.png",
+      "PackagePath": "staticwebassets/icon-192.png"
+    },
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/wwwroot/icon-512.png",
+      "PackagePath": "staticwebassets/icon-512.png"
+    },
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/wwwroot/manifest.json",
+      "PackagePath": "staticwebassets/manifest.json"
+    },
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/wwwroot/manifest.webmanifest",
+      "PackagePath": "staticwebassets/manifest.webmanifest"
+    },
+    {
+      "Id": "/Users/czaacza/Desktop/mati/Politechnika/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab/Programowanie-Aplikacji-Mobilnych-I-Webowych/Lab06/calculator-app/MyBlazorPwa/wwwroot/sample-data/weather.json",
+      "PackagePath": "staticwebassets/sample-data/weather.json"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.MyBlazorPwa.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.MyBlazorPwa.props",
+      "PackagePath": "build\\MyBlazorPwa.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.MyBlazorPwa.props",
+      "PackagePath": "buildMultiTargeting\\MyBlazorPwa.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.MyBlazorPwa.props",
+      "PackagePath": "buildTransitive\\MyBlazorPwa.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
